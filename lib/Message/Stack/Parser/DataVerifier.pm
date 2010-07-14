@@ -14,7 +14,7 @@ Message::Stack::Parser::DataVerifier - Add messages to a Message::Stack from a D
   use Message::Stack::Parser::DataVerifier;
 
   # Pass a Data::Verifier::Results object to parse.
-  my $ms = Message::Stack::Parser->new->parse(
+  my $ms = Message::Stack::Parser::DataVerifier->new->parse(
     Message::Stack->new,
     $scope,
     $dv_results
