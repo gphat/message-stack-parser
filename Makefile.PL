@@ -8,7 +8,7 @@ license  'perl';
 build_requires 'Test::More';
 
 requires 'Message::Stack';
-recommends 'Data::Verifier'
+recommends 'Data::Verifier';
 
 WriteAll;
 
