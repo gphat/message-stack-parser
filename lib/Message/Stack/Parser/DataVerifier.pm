@@ -31,7 +31,7 @@ The fields are mapped from Data::Verifier into a Message in the following way:
 
 =over 4
 
-=item B<id> = C<"missing_$fieldname">
+=item B<msgid> = C<"missing_$fieldname">
 
 =item B<scope> = The passed in scope
 
@@ -45,7 +45,7 @@ The fields are mapped from Data::Verifier into a Message in the following way:
 
 =over 4
 
-=item B<id> = C<"invalid_$fieldname">
+=item B<msgid> = C<"invalid_$fieldname">
 
 =item B<scope> = The passed in scope
 
@@ -71,7 +71,7 @@ sub parse {
 
     foreach my $f ($results->missings) {
         $stack->add(Message::Stack::Message->new(
-            id      => "missing_$f",
+            msgid   => "missing_$f",
             scope   => $scope,
             subject => $f,
             level   => 'error'
@@ -80,7 +80,7 @@ sub parse {
 
     foreach my $f ($results->invalids) {
         $stack->add(Message::Stack::Message->new(
-            id      => "invalid_$f",
+            msgid   => "invalid_$f",
             scope   => $scope,
             subject => $f,
             level   => 'error',
