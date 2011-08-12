@@ -1,7 +1,7 @@
 package Message::Stack::Parser;
 use Moose::Role;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 requires 'parse';
 

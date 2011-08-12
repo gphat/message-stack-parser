@@ -84,7 +84,7 @@ sub parse {
             scope   => $scope,
             subject => $f,
             level   => 'error',
-            params  => [ $results->get_original_value($f) ]
+            params  => [ $results->get_original_value($f), $results->get_field($f)->reason ],
         ));
     }
 }

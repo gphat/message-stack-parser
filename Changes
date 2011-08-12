@@ -1,5 +1,8 @@
 Revision history for Message-Stack-Parser
 
+0.03    Jun 10, 2011
+  * Add reason as the second parameter
+
 0.02    Jul 20, 2010
   * Add a bogus test
 
