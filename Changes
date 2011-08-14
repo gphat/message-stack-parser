@@ -1,5 +1,10 @@
 Revision history for Message-Stack-Parser
 
+{{$NEXT}}
+
+0.04 Aug 14 2011
+  * Convert to Dist::Zilla
+
 0.03    Jun 10, 2011
   * Add reason as the second parameter
 
