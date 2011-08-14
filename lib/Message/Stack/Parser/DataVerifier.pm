@@ -1,17 +1,21 @@
 package Message::Stack::Parser::DataVerifier;
 use Moose;
 
+# ABSTRACT: Add messages to a Message::Stack from a Data::Verifier results
+
 with 'Message::Stack::Parser';
 
 use Message::Stack::Message;
 
-=head1 NAME
-
-Message::Stack::Parser::DataVerifier - Add messages to a Message::Stack from a Data::Verifier results
-
 =head1 SYNOPSIS
 
   use Message::Stack::Parser::DataVerifier;
+
+  my $dv = Data::Verifier->new;
+
+  my $dv_results = $dv->verify;
+
+  my $scope = 'login';
 
   # Pass a Data::Verifier::Results object to parse.
   my $ms = Message::Stack::Parser::DataVerifier->new->parse(
@@ -24,6 +28,10 @@ Message::Stack::Parser::DataVerifier - Add messages to a Message::Stack from a D
 
 This class will add a message to the provided L<Message::Stack> for every
 missing or invalid field in a L<Data::Verifier::Result>.
+
+=begin :prelude
+
+=head1 MAPPING
 
 The fields are mapped from Data::Verifier into a Message in the following way:
 
@@ -57,9 +65,9 @@ The fields are mapped from Data::Verifier into a Message in the following way:
 
 =back
 
-=head1 METHODS
+=end :prelude
 
-=head2 parse ($stack, $scope, $results)
+=method parse ($stack, $scope, $results)
 
 Adds messages from the provided C<$results> to the provided C<$stack> under
 the C<$scope> that is passed in.
@@ -88,21 +96,5 @@ sub parse {
         ));
     }
 }
-
-=head1 AUTHOR
-
-Cory G Watson, C<< <gphat at cpan.org> >>
-
-=head1 COPYRIGHT & LICENSE
-
-Copyright 2010 Cory G Watson.
-
-This program is free software; you can redistribute it and/or modify it
-under the terms of either: the GNU General Public License as published
-by the Free Software Foundation; or the Artistic License.
-
-See http://dev.perl.org/licenses/ for more information.
-
-=cut
 
 1;
