@@ -18,11 +18,14 @@ use Message::Stack::Message;
   my $scope = 'login';
 
   # Pass a Data::Verifier::Results object to parse.
-  my $ms = Message::Stack::Parser::DataVerifier->new->parse(
-    Message::Stack->new,
+  my $ms = Message::Stack;
+  Message::Stack::Parser::DataVerifier->new->parse(
+    $ms,
     $scope,
     $dv_results
   );
+
+  # and now $ms has messages based on $dv_results
 
 =head1 DESCRIPTION
 
