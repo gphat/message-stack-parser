@@ -95,6 +95,8 @@ sub parse {
             params  => [ $results->get_original_value($f), $results->get_field($f)->reason ],
         ));
     }
+
+    return $stack;
 }
 
 1;
