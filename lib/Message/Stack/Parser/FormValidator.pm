@@ -4,7 +4,7 @@ use Moose;
 use Message::Stack::Message;
 
 sub parse {
-    my ($self, $stack, $scope, $results) = @_;
+    my ($stack, $scope, $results) = @_;
 
     if($results->success) {
         return 1;

@@ -78,7 +78,7 @@ the C<$scope> that is passed in.
 =cut
 
 sub parse {
-    my ($self, $stack, $scope, $results) = @_;
+    my ($stack, $scope, $results) = @_;
 
     foreach my $f ($results->missings) {
         $stack->add(Message::Stack::Message->new(
