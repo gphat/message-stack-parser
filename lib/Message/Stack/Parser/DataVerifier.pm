@@ -18,8 +18,9 @@ use Message::Stack::Message;
   my $scope = 'login';
 
   # Pass a Data::Verifier::Results object to parse.
-  my $ms = Message::Stack::Parser::DataVerifier->new->parse(
-    Message::Stack->new,
+  my $ms = Message::Stack;
+  Message::Stack::Parser::DataVerifier->parse(
+    $ms,
     $scope,
     $dv_results
   );
@@ -75,7 +76,7 @@ the C<$scope> that is passed in.
 =cut
 
 sub parse {
-    my ($self, $stack, $scope, $results) = @_;
+    my ($class, $stack, $scope, $results) = @_;
 
     foreach my $f ($results->missings) {
         $stack->add(Message::Stack::Message->new(
