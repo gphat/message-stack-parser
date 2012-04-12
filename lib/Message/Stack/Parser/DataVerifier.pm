@@ -18,8 +18,8 @@ use Message::Stack::Message;
   my $scope = 'login';
 
   # Pass a Data::Verifier::Results object to parse.
-  my $ms = Message::Stack;
-  Message::Stack::Parser::DataVerifier->new->parse(
+  my $ms = Message::Stack->new;
+  Message::Stack::Parser::DataVerifier::parse(
     $ms,
     $scope,
     $dv_results
