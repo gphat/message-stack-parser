@@ -3,8 +3,6 @@ use Moose::Role;
 
 # ABSTRACT: A simple role for creating a Message::Stack from things
 
-our $VERSION = '0.03';
-
 =method parse ($stack, $scope, $results)
 
 Adds messages from the provided C<$results> to the provided C<$stack> under
